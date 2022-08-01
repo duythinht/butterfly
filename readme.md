@@ -4,7 +4,7 @@ Mjolnir is designed to be the simplest way possible to make grafana dashboard. I
 
 The project is forked from internal original project (owned by me), I need you help to add more component option (other component and the transform is not completed)
 
-```
+```js
 local g = import '../../lib/grafana.libsonnet';
 
 local graph = g.panel.graph;
