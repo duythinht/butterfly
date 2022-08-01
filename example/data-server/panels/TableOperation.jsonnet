@@ -1,4 +1,4 @@
-local g = import '../../lib/grafana.libsonnet';
+local g = import '../../../lib/grafana.libsonnet';
 
 local table = g.panel.table;
 

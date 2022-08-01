@@ -1,4 +1,4 @@
-local g = import '../../lib/grafana.libsonnet';
+local g = import '../../../lib/grafana.libsonnet';
 
 local graph = g.panel.graph;
 
@@ -8,7 +8,7 @@ local property = g.panel.field.config.override.property;
 local mapping = g.panel.field.config.mapping;
 
 local target = g.target.Prometheus.new(
-  expr='increase(ontopy_cdc_stream_total_msg_count{}[5m]) / 5 > 0',
+  expr='increase(cdc_stream_total_msg_count{}[5m]) / 5 > 0',
   legend='{{ instance }}',
 );
 

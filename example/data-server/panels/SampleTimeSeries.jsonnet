@@ -1,9 +1,9 @@
-local g = import '../../lib/grafana.libsonnet';
+local g = import '../../../lib/grafana.libsonnet';
 
 local graph = g.panel.graph;
 
 local target = g.target.Prometheus.new(
-  expr='histogram_quantile(0.9, sum(rate(ontopy_dremio_query_duration_seconds_bucket{}[5m])) by (instance,le))',
+  expr='histogram_quantile(0.9, sum(rate(dremio_query_duration_seconds_bucket{}[5m])) by (instance,le))',
   legend='{{instance}}',
 );
 

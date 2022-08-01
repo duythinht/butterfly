@@ -1,4 +1,4 @@
-local g = import '../lib/grafana.libsonnet';
+local g = import '../../lib/grafana.libsonnet';
 
 g.dashboard.Dashboard.new(
   title='Data Server Example',

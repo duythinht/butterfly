@@ -1,4 +1,4 @@
-local g = import '../../lib/grafana.libsonnet';
+local g = import '../../../lib/grafana.libsonnet';
 
 local graph = g.panel.graph;
 
@@ -8,7 +8,7 @@ local property = g.panel.field.config.override.property;
 local mapping = g.panel.field.config.mapping;
 
 local target = g.target.Prometheus.new(
-  expr='sum(ontopy_op_running{type!="opendistro"}) by (op, type)',
+  expr='sum(op_running{type!="opendistro"}) by (op, type)',
   legend='{{type}}.{{ op }}',
 );
 

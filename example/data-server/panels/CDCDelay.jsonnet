@@ -1,4 +1,4 @@
-local g = import '../../lib/grafana.libsonnet';
+local g = import '../../../lib/grafana.libsonnet';
 
 local table = g.panel.table;
 
@@ -14,12 +14,12 @@ local targets = [
     instant=true
   ),
   g.target.Prometheus.new(
-    expr='sum(ontopy_cdc_kafka_delay{stream="k2p"}) by (schema, table)',
+    expr='sum(cdc_kafka_delay{stream="k2p"}) by (schema, table)',
     format='table',
     instant=true
   ),
   g.target.Prometheus.new(
-    expr='sum(ontopy_cdc_kafka_delay) by (schema, table)',
+    expr='sum(cdc_kafka_delay) by (schema, table)',
     format='table',
     instant=true
   ),

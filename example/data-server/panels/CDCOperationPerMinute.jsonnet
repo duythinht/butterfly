@@ -1,4 +1,4 @@
-local g = import '../../lib/grafana.libsonnet';
+local g = import '../../../lib/grafana.libsonnet';
 
 local graph = g.panel.graph;
 
@@ -8,7 +8,7 @@ local property = g.panel.field.config.override.property;
 local mapping = g.panel.field.config.mapping;
 
 local target = g.target.Prometheus.new(
-  expr='sum(increase(ontopy_cdc_op_counter{}[5m])) by (op) / 5',
+  expr='sum(increase(cdc_op_counter{}[5m])) by (op) / 5',
   legend='{{ op }}',
 );
 

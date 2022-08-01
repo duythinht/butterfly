@@ -1,4 +1,4 @@
-local g = import '../../lib/grafana.libsonnet';
+local g = import '../../../lib/grafana.libsonnet';
 
 local graph = g.panel.graph;
 
@@ -8,7 +8,7 @@ local property = g.panel.field.config.override.property;
 local mapping = g.panel.field.config.mapping;
 
 local target = g.target.Prometheus.new(
-  expr='sum(rate(ontopy_op_n_count{type="sqlio", op=~"Count|Query|List|Search|QueryFn|Read|Load"}[5m])) by (op, type, unit) * 60 > 0',
+  expr='sum(rate(op_n_count{type="sqlio", op=~"Count|Query|List|Search|QueryFn|Read|Load"}[5m])) by (op, type, unit) * 60 > 0',
   legend='{{type}}.{{ op }} {{unit}}',
 );
 

@@ -1,4 +1,4 @@
-local g = import '../../lib/grafana.libsonnet';
+local g = import '../../../lib/grafana.libsonnet';
 
 local graph = g.panel.graph;
 
@@ -9,7 +9,7 @@ local mapping = g.panel.field.config.mapping;
 
 local targets = [
   g.target.Prometheus.new(
-    expr='sum(rate(ontopy_op_n_count{type="parquet"}[5m])) by (op) * 60 > 0',
+    expr='sum(rate(op_n_count{type="parquet"}[5m])) by (op) * 60 > 0',
     legend='{{ op }}',
   ),
 ];
