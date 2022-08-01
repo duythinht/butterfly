@@ -1,0 +1,3 @@
+{
+    'Prometheus': import 'Prometheus.libsonnet'
+}

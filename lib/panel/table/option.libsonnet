@@ -1,0 +1,5 @@
+{
+  hideHeader: {
+    showHeader: false,
+  }
+}
